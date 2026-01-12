@@ -8,120 +8,148 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #f8fafc;
-  color: #1e293b;
-  line-height: 1.7;
+  color: #e5e7eb;
+  background: linear-gradient(120deg, #020617, #020617);
+  overflow-x: hidden;
+}
+
+/* 🌌 Animated gradient background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, #6366f1 0%, transparent 35%),
+    radial-gradient(circle at 80% 30%, #22d3ee 0%, transparent 35%),
+    radial-gradient(circle at 50% 80%, #a855f7 0%, transparent 40%);
+  opacity: 0.35;
+  z-index: -1;
 }
 
 /* ---------- Layout ---------- */
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
-  padding: 80px 20px;
-}
-
-.section {
-  margin-top: 90px;
-}
-
-h1, h2 {
-  color: #0f172a;
-}
-
-h2 {
-  font-size: 2.2rem;
-  margin-bottom: 30px;
+  padding: 90px 24px;
 }
 
 /* ---------- Hero ---------- */
 .hero {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 120px;
 }
 
 .hero h1 {
-  font-size: 3.2rem;
+  font-size: 3.8rem;
   font-weight: 700;
+  background: linear-gradient(to right, #818cf8, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  color: #475569;
-  margin-top: 15px;
+  font-size: 1.3rem;
+  color: #cbd5f5;
+  margin-top: 18px;
 }
 
 .hero a {
   display: inline-block;
-  margin-top: 35px;
-  padding: 14px 32px;
-  background: #2563eb;
-  color: white;
+  margin-top: 40px;
+  padding: 15px 38px;
+  background: linear-gradient(to right, #6366f1, #22d3ee);
+  color: #020617;
   text-decoration: none;
-  border-radius: 10px;
-  font-weight: 500;
-}
-
-/* ---------- Projects ---------- */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.card {
-  background: white;
-  padding: 28px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  border-radius: 999px;
+  font-weight: 600;
   transition: transform 0.3s;
 }
 
+.hero a:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- Sections ---------- */
+.section {
+  margin-top: 120px;
+}
+
+.section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* ---------- Cards ---------- */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.card {
+  padding: 35px;
+  border-radius: 22px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-12px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
 }
 
 .card h3 {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
 }
 
 .tech {
-  color: #2563eb;
+  margin-top: 15px;
   font-size: 0.9rem;
-  margin-top: 10px;
+  color: #94a3b8;
 }
 
 /* ---------- Skills ---------- */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .skills span {
-  display: inline-block;
-  background: #e2e8f0;
-  padding: 10px 16px;
-  margin: 8px;
-  border-radius: 30px;
-  font-size: 0.9rem;
+  margin: 10px;
+  padding: 12px 20px;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-radius: 999px;
+  font-size: 0.95rem;
 }
 
 /* ---------- Contact ---------- */
+.contact {
+  text-align: center;
+}
+
 .contact a {
+  margin: 0 15px;
+  color: #38bdf8;
   text-decoration: none;
-  color: #2563eb;
   font-weight: 500;
-  margin-right: 15px;
 }
 
 /* ---------- Footer ---------- */
 footer {
-  margin-top: 100px;
+  margin-top: 120px;
   text-align: center;
-  padding: 30px;
-  color: #64748b;
+  padding: 40px;
+  color: #94a3b8;
 }
 </style>
 </head>
@@ -131,8 +159,8 @@ footer {
 <!-- HERO -->
 <div class="container hero">
   <h1>Ram Rastogi</h1>
-  <p>Computer Science Student · Full Stack Developer · Problem Solver</p>
-  <a href="#projects">View My Work</a>
+  <p>Full Stack Developer · Computer Science Student · Problem Solver</p>
+  <a href="#projects">Explore My Work</a>
 </div>
 
 <!-- PROJECTS -->
@@ -142,27 +170,19 @@ footer {
   <div class="projects">
     <div class="card">
       <h3>AI Resume Ranker</h3>
-      <p>
-        An NLP-based system that automatically ranks resumes using machine learning
-        and cosine similarity.
-      </p>
+      <p>Intelligent system that ranks resumes using NLP and machine learning models.</p>
       <p class="tech">Python · Flask · SpaCy · Sklearn</p>
     </div>
 
     <div class="card">
-      <h3>E-Commerce Website</h3>
-      <p>
-        A complete full-stack shopping platform with cart, admin panel,
-        and database integration.
-      </p>
+      <h3>E-Commerce Platform</h3>
+      <p>Full-stack shopping solution with authentication, cart, and admin dashboard.</p>
       <p class="tech">React · Node.js · MySQL</p>
     </div>
 
     <div class="card">
       <h3>Bug Tracking System</h3>
-      <p>
-        A Java-based application for tracking, assigning, and managing software bugs.
-      </p>
+      <p>Java-based tool for managing software bugs with role-based workflows.</p>
       <p class="tech">Java · MySQL</p>
     </div>
   </div>
@@ -172,25 +192,224 @@ footer {
 <div class="container section">
   <h2>Skills</h2>
   <div class="skills">
-    <span>C++</span>
-    <span>Java</span>
-    <span>Python</span>
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>JavaScript</span>
-    <span>React</span>
-    <span>Node.js</span>
-    <span>MySQL</span>
+    <span>C++</span><span>Java</span><span>Python</span>
+    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+    <span>React</span><span>Node.js</span><span>MySQL</span>
   </div>
 </div>
 
 <!-- ABOUT -->
 <div class="container section">
   <h2>About Me</h2>
-  <p>
-    I am a motivated computer science student who enjoys building practical
-    applications, learning new technologies, and solving real-world problems
-    through clean and efficient code.
+  <p style="max-width:800px;margin:auto;text-align:center;">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ram Rastogi | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #e5e7eb;
+  background: linear-gradient(120deg, #020617, #020617);
+  overflow-x: hidden;
+}
+
+/* 🌌 Animated gradient background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, #6366f1 0%, transparent 35%),
+    radial-gradient(circle at 80% 30%, #22d3ee 0%, transparent 35%),
+    radial-gradient(circle at 50% 80%, #a855f7 0%, transparent 40%);
+  opacity: 0.35;
+  z-index: -1;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 90px 24px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding-top: 120px;
+}
+
+.hero h1 {
+  font-size: 3.8rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #818cf8, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  color: #cbd5f5;
+  margin-top: 18px;
+}
+
+.hero a {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 15px 38px;
+  background: linear-gradient(to right, #6366f1, #22d3ee);
+  color: #020617;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.3s;
+}
+
+.hero a:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- Sections ---------- */
+.section {
+  margin-top: 120px;
+}
+
+.section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* ---------- Cards ---------- */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.card {
+  padding: 35px;
+  border-radius: 22px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.tech {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* ---------- Skills ---------- */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skills span {
+  margin: 10px;
+  padding: 12px 20px;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+/* ---------- Contact ---------- */
+.contact {
+  text-align: center;
+}
+
+.contact a {
+  margin: 0 15px;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: 120px;
+  text-align: center;
+  padding: 40px;
+  color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="container hero">
+  <h1>Ram Rastogi</h1>
+  <p>Full Stack Developer · Computer Science Student · Problem Solver</p>
+  <a href="#projects">Explore My Work</a>
+</div>
+
+<!-- PROJECTS -->
+<div class="container section" id="projects">
+  <h2>Projects</h2>
+
+  <div class="projects">
+    <div class="card">
+      <h3>AI Resume Ranker</h3>
+      <p>Intelligent system that ranks resumes using NLP and machine learning models.</p>
+      <p class="tech">Python · Flask · SpaCy · Sklearn</p>
+    </div>
+
+    <div class="card">
+      <h3>E-Commerce Platform</h3>
+      <p>Full-stack shopping solution with authentication, cart, and admin dashboard.</p>
+      <p class="tech">React · Node.js · MySQL</p>
+    </div>
+
+    <div class="card">
+      <h3>Bug Tracking System</h3>
+      <p>Java-based tool for managing software bugs with role-based workflows.</p>
+      <p class="tech">Java · MySQL</p>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="container section">
+  <h2>Skills</h2>
+  <div class="skills">
+    <span>C++</span><span>Java</span><span>Python</span>
+    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+    <span>React</span><span>Node.js</span><span>MySQL</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="container section">
+  <h2>About Me</h2>
+  <p style="max-width:800px;margin:auto;text-align:center;">
+   I am a motivated computer science student with a strong interest in building high-quality software systems.
+    I enjoy tackling complex engineering challenges, designing clean and scalable solutions, and working across the full stack to bring products to life. 
+    I actively seek opportunities to learn, 
+    improve, and apply my skills to real-world problems while growing as a professional software developer.
   </p>
 </div>
 
@@ -199,8 +418,28 @@ footer {
   <h2>Contact</h2>
   <p>Email: ramrastogi1277145@gmail.com</p>
   <p>
-    <a href="https://github.com/ramrastogi" target="_blank">GitHub</a>
+    <a href="https://github.com/ram9275" target="_blank">GitHub</a>
     <a href="https://www.linkedin.com/in/ram-rastogi-490225239/" target="_blank">LinkedIn</a>
+  </p>
+</div>
+
+<footer>
+  © 2026 Ram Rastogi
+</footer>
+
+</body>
+</html>
+
+  </p>
+</div>
+
+<!-- CONTACT -->
+<div class="container section contact">
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+  <p>
+    <a href="https://github.com/ramrastogi" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-ID" target="_blank">LinkedIn</a>
   </p>
 </div>
 
